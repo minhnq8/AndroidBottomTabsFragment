@@ -15,21 +15,16 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.botton_tabs);
-
-		// mTabHost = new FragmentTabHost(this);
-		// mTabHost.setup(this, getSupportFragmentManager(),
-		// R.id.menu_settings);
 		mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.readtablecontent);
 
 		Bundle b = new Bundle();
-		b.putString("key", "Simple");
-		mTabHost.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"), FirstFragmentTab.class, b);
-		//
+		b.putString("key", "FirstTab");
+		mTabHost.addTab(mTabHost.newTabSpec("firsttab").setIndicator("FirstTab"), FirstFragmentTab.class, b);
+
 		b = new Bundle();
-		System.out.print("hello git");
-		b.putString("key", "Contacts");
-		mTabHost.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"), SecondFragmentTab.class, b);
+		b.putString("key", "SecondTab");
+		mTabHost.addTab(mTabHost.newTabSpec("secondtab").setIndicator("SecondTab"), SecondFragmentTab.class, b);
 	}
 
 	@Override
